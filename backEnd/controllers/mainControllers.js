@@ -10,7 +10,7 @@ exports.mainloginaccess = async(req,res,next)=>{
     // console.log(req);
     const { decode } = req;
     if (decode) {
-      // console.log("디디디디%^%^%^%^%^%^%^",decode);
+      console.log("디디디디%^%^%^%^%^%^%^",decode);
       await User.findOne({
         where : {user_id : decode.user_id}
       }).then((e) => {

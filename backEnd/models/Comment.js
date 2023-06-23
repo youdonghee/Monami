@@ -3,6 +3,7 @@ const Sequelize = require("sequelize");
 class Comment extends Sequelize.Model{
     static init(sequelize){
         return super.init({
+<<<<<<< HEAD
             // 댓글 내용
             content: {
                 type: Sequelize.STRING(300),
@@ -42,6 +43,19 @@ class Comment extends Sequelize.Model{
             //     allowNull : false,
             // }, 
             // 👉 중복되는거 같아서 생략 
+=======
+            content: {
+                type: Sequelize.STRING(300),
+                allowNull: false
+            },
+            connect_id : {
+                type: Sequelize.INTEGER(10)
+            },
+            connect_writer: {
+                type: Sequelize.INTEGER(10),
+                allowNull: false
+            }
+>>>>>>> 0311e6280e10ddad137fd42832e17ecebf7a0054
 
         },
         {
@@ -57,6 +71,7 @@ class Comment extends Sequelize.Model{
     }
     static associate(db){
         db.Comment.belongsTo(db.User, {foreignKey: "user_primaryKey", targetKey: "id"})
+<<<<<<< HEAD
         
         // [새로운 버전 = 예전 버전]
         db.Comment.belongsTo(db.Post, {foreignKey: "post_primaryKey", targetKey: "id"})
@@ -65,6 +80,9 @@ class Comment extends Sequelize.Model{
                 // 반대로, comment 관점에서는 belongs to 를 쓴다. (익숙해지자)
     
     
+=======
+        db.Comment.belongsTo(db.Post, {foreignKey: "post_primaryKey", targetKey: "id"})
+>>>>>>> 0311e6280e10ddad137fd42832e17ecebf7a0054
     }
 }
 

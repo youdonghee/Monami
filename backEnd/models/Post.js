@@ -3,23 +3,33 @@ const Sequelize = require("sequelize");
 class Post extends Sequelize.Model{
     static init(sequelize){
         return super.init({
+<<<<<<< HEAD
             // 유저의 '닉네임' 
+=======
+>>>>>>> 0311e6280e10ddad137fd42832e17ecebf7a0054
             user_id : {
                 type: Sequelize.STRING(20),
                 allowNull: false
             },
+<<<<<<< HEAD
 
             // 게시글 '제목' 
+=======
+>>>>>>> 0311e6280e10ddad137fd42832e17ecebf7a0054
             title: {
                 type: Sequelize.STRING(100),
                 allowNull: false
             },
+<<<<<<< HEAD
 
             // 게시글 작성하는 '텍스트 내용'
+=======
+>>>>>>> 0311e6280e10ddad137fd42832e17ecebf7a0054
             content: {
                 type: Sequelize.STRING(300),
                 allowNull: false
             },
+<<<<<<< HEAD
 
             // 게시글 작성과 함께 올리는 '태그들' 
             tags : {
@@ -67,6 +77,20 @@ class Post extends Sequelize.Model{
             //     allowNull : false
             // },
 
+=======
+            post_img: {
+                type: Sequelize.STRING(100)
+            },
+            status: {
+                type: Sequelize.INTEGER(10)    
+            },
+            views: {
+                type: Sequelize.INTEGER(10)
+            },
+            likeClickUser: {
+                type: Sequelize.STRING(100)
+            }
+>>>>>>> 0311e6280e10ddad137fd42832e17ecebf7a0054
         },
         {
             sequelize,
@@ -80,6 +104,7 @@ class Post extends Sequelize.Model{
         })
     }
     static associate(db){
+<<<<<<< HEAD
 
         db.Post.belongsTo(db.User, {foreignKey: "user_primaryKey", sourceKey: "id"})
         // db.Post.hasMany(db.User, {foreignKey: "user_id", sourceKey: "id"})
@@ -95,6 +120,9 @@ class Post extends Sequelize.Model{
         // [예전방식]
             // db.Post.belongsTo(db.Comment, {foreignKey: "post_primaryKey", sourceKey: "id"})
 
+=======
+        db.Post.hasMany(db.Comment, {foreignKey: "post_primaryKey", sourceKey: "id"})
+>>>>>>> 0311e6280e10ddad137fd42832e17ecebf7a0054
     }
 }
 

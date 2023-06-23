@@ -40,6 +40,7 @@ class User extends Sequelize.Model {
                 collate: "utf8_general_ci"
             })
     }
+<<<<<<< HEAD
 
     static associate(db){
         
@@ -52,6 +53,12 @@ class User extends Sequelize.Model {
         db.User.hasMany(db.Comment, {foreignKey: "user_primaryKey", sourceKey: "id"})
         db.User.hasMany(db.Question, {foreignKey: "user_primaryKey", sourceKey: "id"})
         db.User.hasMany(db.Drawing, {foreignKey: "user_primaryKey", sourceKey: "id"})
+=======
+    static associate(db) {
+        db.User.hasMany(db.Comment, { foreignKey: "user_primaryKey", sourceKey: "id" })
+        db.User.hasMany(db.Question, { foreignKey: "user_primaryKey", sourceKey: "id" })
+        db.User.hasMany(db.Drawing, { foreignKey: "user_primaryKey", sourceKey: "id" })
+>>>>>>> 0311e6280e10ddad137fd42832e17ecebf7a0054
     }
 
 }
