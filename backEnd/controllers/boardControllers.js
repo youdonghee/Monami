@@ -31,7 +31,8 @@ const { Op } = require('sequelize');    // 태그 검색 하기 위해 필요
         console.log(req.decode.id)
 
         console.log("🎏🎏🎏🎏🎏🎏🎏 여기까지 옴!!!!! ")
-        res.redirect("http://127.0.0.1:5502/Monami/frontEnd/boardCreate.html")
+        res.sendFile("/home/ubuntu/frontEnd/boardCreate.html");
+        // res.redirect("/boardCreate.html")
 }
 
 
