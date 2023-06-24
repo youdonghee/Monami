@@ -361,20 +361,20 @@
         }
 
         #nickname {
-            width: 550px;
-            height: 30px;
-            overflow: hidden;
+            width: 500px;
+            height: 50px;
+            /* overflow: hidden; */
             text-overflow: ellipsis;
             white-space: nowrap;
             position: absolute;
-            top: 110px;
+            top: 86px;
             font-size: 25px;
         }
 
         #DrawresultVideo {
             position: absolute;
-            width: 550px;
-            height: 245px;
+            width: 523px;
+            height: 230px;
             /* border: 1px solid; */
             background-color: white;
             bottom: 45px;
@@ -1828,6 +1828,8 @@
     const canvas = document.getElementById("canvas");
     // getContext: 그래픽 렌더링 컨텍스트를 가져오는 메소드. 2d를 가져온다.
     const ctx = canvas.getContext("2d");
+    canvas.width = 730;
+    canvas.height = 360;
 
     // canvas 영역 지정(css로는 X. 그림 그릴 때 마우스와 좌표가 안맞을 수 있음)
     canvas.width = 900;
