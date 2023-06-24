@@ -14,7 +14,9 @@
 
 
 // [read] 게시판 글쓰는 곳 보여주기 
-    routers.get("/create" ,  islogin, boardCreateView)
+    routers.get("/create" ,  islogin, (req,res)=>{
+        res.sendFile("/home/ubuntu/frontEnd/boardCreate.html");
+    },boardCreateView)
 
 
 // [create] 게시판 글쓰기 
