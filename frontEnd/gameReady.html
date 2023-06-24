@@ -1075,7 +1075,7 @@
 
 
     // 방만들기 버튼을 클릭하면 방을 생성할 수 있는 팝업이 열리고 클라이언트가 입력한 값이 db에 넘어간다.
-    createBtn.onclick = () => {
+    createBtn.onclick = async() => {
         // const form = new FormData();
         // console.log("title.value",title.value);
         // form.append("title", title.value);
@@ -1083,7 +1083,7 @@
             console.log("방생성되어서 이벤트보냄")
         })
         // joinRoom();
-        axios.post("/gameready/create", { title: title.value }, {
+        await axios.post("/gameready/create", { title: title.value }, {
             withCredentials: true,
             "Content-Type": "application/json"
 
@@ -1119,7 +1119,7 @@
         //     console.log(err);
         // })
 
-        axios.post("/gameready/gethost", { title: titlevalue }, {
+        await axios.post("/gameready/gethost", { title: titlevalue }, {
             withCredentials: true
         }).then((e) => {
                 console.log(e);
