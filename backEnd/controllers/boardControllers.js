@@ -119,8 +119,8 @@ const { Op } = require('sequelize');    // 태그 검색 하기 위해 필요
                 
                 // id 값 포함해서 redirect 시키기
                     // [시도] - 라우터로 보내보기
-                        res.json({ redirectURL: `http://127.0.0.1:4000/board/item/${id_post}` });
-                        // res.json({ redirectURL: `http://127.0.0.1:4000/board/item/${id_post}` });
+                        res.json({ redirectURL: `/board/item/${id_post}` });
+                        // res.json({ redirectURL: `/board/item/${id_post}` });
                             // [해석]
                                 // ⭐⭐⭐ 포트를 4000 으로 해야 > 클라이언트에서 보내고, 라우터로 들어간다. 
 
@@ -351,14 +351,14 @@ const { Op } = require('sequelize');    // 태그 검색 하기 위해 필요
                     console.log("대댓글 시, '원본 댓글 ID'" , reComment_original_commentID)
 
                     // 1) 이렇게 보내면 작동함
-                        // res.redirect(`http://127.0.0.1:4000/board/item/${id_post}`)
+                        // res.redirect(`/board/item/${id_post}`)
 
                     // 2) 다만, 새로고침 되는게 싫어서 이렇게 보내보자 다시. 
                         
                     
                         // 예전방식 - 작동함🔵
                         res.json({
-                            redirectURL :  `http://127.0.0.1:4000/board/item/${id_post}` , 
+                            redirectURL :  `/board/item/${id_post}` , 
                             newComment : newComment,
                         })
                     
@@ -740,7 +740,7 @@ exports.boardListPages = async (req, res) => {
             // 5) 클라이언트에 보내기 
                 // a) res.json로 redirect 보내면서, 2) result 를 담아서 보내자
                     // res.json({ 
-                    //     redirectURL: `http://127.0.0.1:4000/board/list` ,
+                    //     redirectURL: `/board/list` ,
                     //     result : result
                     // });                    
                     // [내가 원하는 것]
@@ -753,7 +753,7 @@ exports.boardListPages = async (req, res) => {
                         // 그냥, 기본 list 를 그리게 되나? 
                         // 어디로 가서 어떻게 실행되는가, 이건 redirect 에서도 만났던 문제 😥😥😥
                     // res.json({
-                    //     redirectURL : "http://127.0.0.1:4000/board/list", 
+                    //     redirectURL : "/board/list", 
                     //     result : result
                     // })
                     // 👉 안 나온다. 
@@ -763,7 +763,7 @@ exports.boardListPages = async (req, res) => {
                     
                     
                     res.json({
-                            // redirectURL : "http://127.0.0.1:4000/board/list/pagenation", 
+                            // redirectURL : "/board/list/pagenation", 
                             data : result
                         })
 
@@ -876,7 +876,7 @@ exports.boardListPages = async (req, res) => {
             // 5) 클라이언트에 보내기 
                 // a) res.json로 redirect 보내면서, 2) result 를 담아서 보내자
                     // res.json({ 
-                    //     redirectURL: `http://127.0.0.1:4000/board/list` ,
+                    //     redirectURL: `/board/list` ,
                     //     result : result
                     // });                    
                     // [내가 원하는 것]
@@ -889,7 +889,7 @@ exports.boardListPages = async (req, res) => {
                         // 그냥, 기본 list 를 그리게 되나? 
                         // 어디로 가서 어떻게 실행되는가, 이건 redirect 에서도 만났던 문제 😥😥😥
                     // res.json({
-                    //     redirectURL : "http://127.0.0.1:4000/board/list", 
+                    //     redirectURL : "/board/list", 
                     //     result : result
                     // })
                     // 👉 안 나온다. 
@@ -899,7 +899,7 @@ exports.boardListPages = async (req, res) => {
                     
                     
                     res.json({
-                            // redirectURL : "http://127.0.0.1:4000/board/list/pagenation", 
+                            // redirectURL : "/board/list/pagenation", 
                             data : result
                         })
 
@@ -1028,7 +1028,7 @@ exports.pagenationView = (req, res) => {
 
                 // res.json({
                 //     // 
-                //     redirectURL :  `http://127.0.0.1:4000/board/item/${postId}` , 
+                //     redirectURL :  `/board/item/${postId}` , 
                 //     // newComment : newComment,
                 // })
             
