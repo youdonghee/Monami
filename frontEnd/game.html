@@ -1832,8 +1832,7 @@
     canvas.height = 360;
 
     // canvas 영역 지정(css로는 X. 그림 그릴 때 마우스와 좌표가 안맞을 수 있음)
-    canvas.width = 900;
-    canvas.height = 600;
+  
 
     //브러쉬 사이즈와 컬러들을 담는 div를 불러오는 변수.
     const brushSize = document.querySelector('.brushs2');
@@ -2279,10 +2278,10 @@
 
             const MyIndex = questions.findIndex((i) => i[i.length - 1] == MyID);
             const lastIndex = questions.length - 1
-            if(gamestep<=2){
+            // if(gamestep<=2){
 
-                getNextUser(MyIndex,questions);
-            }
+            //     getNextUser(MyIndex,questions);
+            // }
             console.log("내가 입력한 제시어의 인덱스 - ", MyIndex)
 
 
@@ -2305,7 +2304,7 @@
                 startRecording()
                 console.log("--------------------------찐찐찐 4단계------------------------------");
                 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                targetIndex = (targetIndex + 1) % questions.length;
+                // targetIndex = (targetIndex + 1) % questions.length;
                 console.log("이번 타겟의 인덱스 - ", targetIndex)
 
                 const isTarget = questions[targetIndex];
@@ -2588,9 +2587,9 @@
 
 
             //@@@@@@@@@@@@@@@타겟값@@@@@@@@@@@@@@@@@@
-            // getNextUser(MyIndex,questions);
+            getNextUser(MyIndex,questions);
             console.log(targetIndex,"targetIndex");
-            targetIndex=targetIndex+1;
+            // targetIndex=targetIndex+1;
             console.log(targetIndex,"targetIndex");
             //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
             // ##########두명이서 할 경우 5라운드에서는 내 인덱스의 값이 들어와야 한다.#############
