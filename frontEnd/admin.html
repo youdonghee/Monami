@@ -101,7 +101,7 @@
   async function drawAdminTable() {
     try {
       //%%%%%%%%%%%%%바꿔주세요%%%%%%%%%%%%%%%(원본: /admin/hi)
-      await axios.get("http://127.0.0.1:4000/admin/hi", {
+      await axios.get("/admin/hi", {
         withCredentials: true,
       }).then((e) => {
         // 유저 데이터 다 가져와서 (어드민 빼고) 그려준다
