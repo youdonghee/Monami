@@ -26,7 +26,7 @@
             height: 100vh;
             box-sizing: border-box;
             background-color: rgb(205, 228, 255);
-            background-image: url(http://127.0.0.1:4000/img/gameback.png);
+            background-image: url(/img/gameback.png);
         }
 
         .view1 {
@@ -68,7 +68,8 @@
             width: 1500px;
             height: 580px;
             /* border: 1px solid darkblue; */
-            background-image: url(http://127.0.0.1:4000/img/school_big.png);
+            background-image: url(/img/school_big.png);
+            line-height: 29px;
         }
 
         .inrow2 {
@@ -106,6 +107,7 @@
             font-weight: 600;
             /* border: 2px solid green; */
             border-radius: 2em;
+            color: white;
         }
         .row1 .flag{
             position: absolute;
@@ -113,7 +115,7 @@
             top: 24%;
             width: 280px;
             height: 140px;
-            background-image: url(http://127.0.0.1:4000/img/makeroom.png);
+            background-image: url(/img/makeroom.png);
         }
 
         .row2 .roomDiv,
@@ -132,13 +134,13 @@
             box-sizing: border-box;
             width: 600px;
             height: 400px;
-            border: 1px solid rgb(31, 22, 155);
-            /* background-image: url(http://127.0.0.1:4000/img/ground.png); */
+            /* border: 1px solid rgb(31, 22, 155); */
+            /* background-image: url(/img/ground.png); */
         }
 
         .userDiv .userInfo,
         .userDiv .chat {
-            border: 1px solid;
+            /* border: 1px solid; */
             width: 100%;
             box-sizing: border-box;
         }
@@ -151,13 +153,13 @@
         .userDiv .chat {
             position: relative;
             height: 200px;
-            background-image: url(http://127.0.0.1:4000/img/chat.png);
+            background-image: url(/img/chat.png);
         }
 
         .chatBox,
         .chatInsert{
             position: absolute;
-            border: 1px solid;
+            /* border: 1px solid; */
             width: 550px;
             left: 50%;
             transform: translate(-50%);
@@ -183,7 +185,7 @@
 
         #message-input{
             font-size: 18px;
-            width: 450px;
+            width: 290px;
         }
         #send-button{
             width: 70px;
@@ -201,10 +203,10 @@
         }
         .userList{
             position: relative;
-            background-image: url(http://127.0.0.1:4000/img/gusback_1.png);
+            background-image: url(/img/gusback_1.png);
         }
         .myProfile{
-            background-image: url(http://127.0.0.1:4000/img/gusback_2.png);
+            background-image: url(/img/gusback_2.png);
         }
 
         .myProfile {
@@ -234,8 +236,13 @@
         .profile3 .pro_name {
             font-size: 20px;
             font-weight: 600;
-        }
 
+        }
+        .pro_name{
+            width: 125px;
+            height: 22px;
+            overflow: hidden;
+        }
         .profile3 a {
             text-decoration: none;
             color: black;
@@ -259,7 +266,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
-            background-image: url(http://127.0.0.1:4000/img/gameRPop_1.png);
+            background-image: url(/img/gameRPop_1.png);
         }
 
         .roompopup_creat.pop {
@@ -288,7 +295,7 @@
         .roomBtn .create,
         .roomBtn .cancle {
             width: 100px;
-            border: 1px solid;
+            /* border: 1px solid; */
             height: 40px;
             flex-direction: column;
             align-items: center;
@@ -302,7 +309,7 @@
         }
         .roomExit, .roomStart{
             width: 100px;
-            border: 1px solid;
+            /* border: 1px solid; */
             height: 40px;
             align-items: center;
             display: flex;
@@ -320,7 +327,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
-            background-image: url(http://127.0.0.1:4000/img/gameRPop_2.png);
+            background-image: url(/img/gameRPop_2.png);
         }
 
         .roompopup_ready.pop {
@@ -373,24 +380,29 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-image: url(http://127.0.0.1:4000/img/door.png);
-
+            background-image: url(/img/door.png);
+            left: 0;
+        }
+        
+        .door.opening {
+            animation: slide 1s ease-in-out 1 forwards;
+            /* left: 150px; */
         }
 
         .indoor {
             width: 220px;
             height: 240px;
             /* border: 1px solid; */
-            background-image: url(http://127.0.0.1:4000/img/indoor.png);
+            background-image: url(/img/indoor.png);
             /* cursor: pointer; */
             position: absolute;
             z-index: 0;
         }
 
-        .door:hover {
+        /* .door:hover {
             /* background-color: aqua; */
-            animation: slide 1s ease forwards;
-        }
+            /* animation: slide 1s ease forwards; */
+        /* } */ 
 
 
         @keyframes slide {
@@ -434,9 +446,14 @@
     height: 30px;
     /* border: 1px solid; */
         }
-
-        .row2 .roomList {
+        .roomlists .doorAni{
+            position: relative;
             cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+        .row2 .roomList {
+            /* cursor: pointer; */
             width: 100%;
             height: 100%;
             display: flex;
@@ -445,7 +462,7 @@
             justify-content: space-between;
             overflow: visible;
             overflow-x: hidden;
-            /* background-image: url(http://127.0.0.1:4000/img/school.png); */
+            /* background-image: url(/img/school.png); */
 
         }
 
@@ -457,7 +474,7 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            border: 1px solid;
+            /* border: 1px solid; */
         }
 
         .room_num {
@@ -470,7 +487,7 @@
             display: none;
             width: 100%;
             height: 100%;
-            border: 1px solid;
+            /* border: 1px solid; */
             background-color: black;
         }
 
@@ -525,7 +542,7 @@
         <div class="row1">
             <!-- 메인화면 이동 -->
             <a href="/main"> <!--배포용 주소-->
-                <img class="headerLogo" src="http://127.0.0.1:4000/img/main_Logo.png" alt="로고">
+                <img class="headerLogo" src="/img/main_Logo.png" alt="로고">
             </a>
             <div class="flag">
                 <div class="createRoom">방만들기</div> <!-- 방을 생성할 수 있는 버튼 -->
@@ -537,15 +554,15 @@
                 <div class="roomDiv">
                     <div style="display: flex;" class="roomList">
                         <div class="roomlists">
-                            <div class="room_num">${el.id}</div>
-                                <div class="indoor">
+                            <!-- <div class="room_num">${el.id}</div> -->
+                                <!-- <div class="indoor">
                                     <div class="room_manager">${el.room_manager}</div>
                                     <div class="room_play">${play2}</div>
                                 </div>
                                 <div class="door">
 
                                     <div class="room_title">${el.title}</div>
-                                </div>
+                                </div> -->
                             </div>
                     </div>
                 </div>
@@ -566,25 +583,14 @@
                         <!-- 채팅 내용이 보이는 영역 -->
                         <div class="chatBox">
                             <ul id="messages">
-                                <li>adsrfadf</li>
-                                <li>adsrfadf</li>
-                                <li>adsrfadf</li>
-                                <li>adsrfadf</li>
-                                <li>adsrfadf</li>
-                                <li>adsrfadf</li>
-                                <li>adsrfadf</li>
-                                <li>adsrfadf</li>
-                                <li>adsrfadf</li>
-                                <li>adsrfadf</li>
-                                <li>adsrfadf</li>
-                                <li>adsrfadf</li>
+
                             </ul>
                         </div>
                         <!-- 채팅을 입력하는 영역 -->
                         <div class="chatInsert">
-                            <input id="message-input" type="text" placeholder="Type your message">
-                            <!-- <input type="text" id="receiver-id" placeholder="Receiver ID or username"> -->
-                            <button id="send-button">Send</button>
+                            <input id="message-input" type="text" placeholder="안녕하세요">
+                            <input type="text" id="receiver-id" placeholder="귓속말">
+                            <button id="send-button">전송</button>
                         </div>
                     </div>
                 </div>
@@ -683,7 +689,7 @@
     // })
     // async function RoomView() {
     //     try {
-    //         const data = await axios.get('http://127.0.0.1:4000/gameready', {
+    //         const data = await axios.get('/gameready', {
     //             withCredentials: true
     //         })
 
@@ -869,7 +875,7 @@
         tmp.forEach(element => {
             console.log(element.userid);
             const li = document.createElement('li');
-            li.textContent = `${element._nickname}, ${element.userid}`;
+            li.textContent = `${element._nickname}`;
             User_idlist.appendChild(li);
         });
 
@@ -879,6 +885,12 @@
     const roomCreateBtn = document.querySelector('.createRoom');    // 방 만들기 버튼
     const roomPopupCreate = document.querySelector('.roompopup_creat')  // 방 만들기 팝업
     const roomcancle = document.querySelector('.cancle');       // 방 만들기 팝업 - 취소하기 버튼
+    // 채팅방 스크롤 추가했음 (동희)
+    function scrollChatToBottom() {
+        const chatBox = document.querySelector('.chatBox');
+        chatBox.scrollTop = chatBox.scrollHeight;        
+    }
+
     // 방 만들기 버튼 클릭 시, 팝업이 토글 됨
     roomCreateBtn.onclick = () => {
         roomPopupCreate.classList.toggle('pop')
@@ -895,30 +907,77 @@
             const data = await axios.get('/gameready/hi', {
                 withCredentials: true
             })
+            console.log(data);
             const roomArr = data.data;
             const roomList = document.querySelector('.roomList');
             roomArr.forEach((el, index) => {
                 // el의 play값을 받아, 해당 방이 게임대기인지, 게임중인지를 표시한다.
-                const play2 = "";
-                if (el.play == 0) {
+                let play2 = "";
+                if (el.play == '0') {
                     play2 = "시작 대기 중"
                 }
-                else if (el.play == 1) {
+                else if (el.play == '1') {
                     play2 = "게임 중"
                 }
                 // console.log("------------------", el.room_manager.length)
-                roomList.innerHTML +=
-                    `<div class="roomlists">
-                        <div class="room_num">${el.id}</div>
-                            <div class="indoor">
-                                <div class="room_manager">${el.room_manager}</div>
-                                <div class="room_play">${play2}</div>
-                            </div>
-                            <div class="door">
+                // roomList.innerHTML +=
+                //     `<div class="roomlists">
+                //         <div class="room_num">${el.id}</div>
+                //             <div class="indoor">
+                //                 <div class="room_manager">${el.room_manager}</div>
+                //                 <div class="room_play">${play2}</div>
+                //             </div>
+                //             <div class="door">
                                 
-                                <div class="room_title">${el.title}</div>
-                            </div>
-                        </div>`
+                //                 <div class="room_title">${el.title}</div>
+                //             </div>
+                //         </div>`
+                
+                // 문 슬라이드 추가해서 수정하는중..ㅠ
+                let roomDiv = document.createElement('div');
+                roomDiv.className = 'roomlists';
+                roomDiv.innerHTML = `
+                    <div class="room_num">${el.id}</div>
+                    <div class="indoor">
+                        <div class="room_manager">${el.room_manager}</div>
+                        <div class="room_play">${play2}</div>
+                    </div>
+                    <div class="doorAni">
+                        <div class="door">
+                            <div class="room_title">${el.title}</div>
+                        </div>
+                    </div>
+                    `;
+                
+                roomList.appendChild(roomDiv);
+                
+                let doorAni = roomDiv.querySelector('.doorAni');
+                let door = roomDiv.querySelector('.door');
+                    console.log(doorAni)
+                    console.log(door)
+                doorAni.addEventListener('mouseenter', function(e) {
+                    e.stopPropagation();
+                    // Add the 'opening' class to the door when the mouse enters
+                        if (!door.classList.contains('opening')) {
+                            door.classList.add('opening');
+                        }
+                });
+
+                doorAni.addEventListener('mouseleave', function(e) {
+                    e.stopPropagation();
+                    // Remove the 'opening' class from the door when the mouse leaves
+                    door.classList.remove('opening');
+                });
+
+                // let doorChildren = door.querySelectorAll('*');
+                // doorChildren.forEach((child) => {
+                //     child.addEventListener('mouseenter', function(event) {
+                //         event.stopPropagation();
+                //     });
+                //     child.addEventListener('mouseleave', function(event) {
+                //         event.stopPropagation();
+                //     });
+                // });
                 //----방을 선택해서 참가하는 함수 ---------------------------------------------------------------------
                 let rooms = document.querySelectorAll(".roomlists");
                 // console.log("썸바리헲미이이이이이익",rooms)
@@ -930,7 +989,8 @@
                         const title = el2.querySelector('.room_title').textContent;
                         // const usernum = el2.querySelector('.room_usernum').textContent;
                         const play = el2.querySelector('.room_play').textContent;
-
+                        nowRoomNUm=num;
+                        joinRoom(num);
                         // let usernum2 = [];
                         // usernum2.push(usernum);
                         // console.log(usernum)
@@ -964,18 +1024,18 @@
             }
 
             );
-            const roomNumElements = document.getElementsByClassName('room_num');
-            console.log(roomNumElements);
-            Array.from(roomNumElements).forEach((element) => {
-                element.addEventListener('click', () => {
-                    console.log("ㅇㅇ눌리긴함");
-                    const roomNum = element.textContent;
-                    nowRoomNUm=roomNum;
-                    joinRoom(roomNum);
+            // const roomNumElements = document.getElementsByClassName('room_num');
+            // console.log(roomNumElements);
+            // Array.from(roomNumElements).forEach((element) => {
+            //     element.addEventListener('click', () => {
+            //         console.log("ㅇㅇ눌리긴함");
+            //         const roomNum = element.textContent;
+            //         nowRoomNUm=roomNum;
+            //         joinRoom(roomNum);
                    
                  
-                })
-            })
+            //     })
+            // })
         } catch (error) {
             console.log(error);
         }
@@ -1038,7 +1098,7 @@
                 const RoomExit = document.querySelector(".roomExit")
                 RoomExit.onclick = () => {
                     RoomPop.classList.toggle('pop')
-                    // axios.post('http://127.0.0.1:4000/gameready/roomDel', { id: title.value }, {
+                    // axios.post('/gameready/roomDel', { id: title.value }, {
                     //     withCredentials: true,
                     //     "Content-Type": "application/json"
                     // })
@@ -1050,7 +1110,7 @@
             console.log(err);
         })
         // form 데이터로 보내는데 form-data로 설정하지 않아서 생긴 이슈 - form에 json값으로 바꿔줌
-        // axios.post("http://127.0.0.1:4000/gameready/create", form, {
+        // axios.post("/gameready/create", form, {
         //     withCredentials : true,
         //     // "Content-Type": "application/json"
         // }).then((e)=>{
@@ -1090,12 +1150,14 @@
             const li = document.createElement('li');
             li.textContent = `${userid._nickname}님이 들어왔습니다.`
             messagesList.appendChild(li);
+            scrollChatToBottom()
         })
         socket.on('chat message', (msg) => {
             console.log("message의", msg);
             const li = document.createElement('li');
             li.textContent = `${msg.nick}: ${msg.message}`;
             messagesList.appendChild(li);
+            scrollChatToBottom()
         });
         console.log("여기까지 오니?")
         socket.emit('connectuser2', e);

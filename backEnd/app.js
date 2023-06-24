@@ -26,17 +26,17 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use("/img", express.static(path.join(__dirname, "image")));
 
-// app.use(cors({
-//     origin:"youdonghee.shop",
-//     credentials: true
-// }));
-
-
 app.use(cors({
-    origin:"http://127.0.0.1:5500",
-    credentials:true
-}
-));
+    origin:"youdonghee.shop",
+    credentials: true
+}));
+
+
+// app.use(cors({
+//     origin:"http://127.0.0.1:5501",
+//     credentials:true
+// }
+// ));
 
 app.use(session({
     name: "token",
@@ -175,7 +175,7 @@ io.on('connection', (socket) => {
     socket.on('createRoom', (num) => {
         console.log("num",num);
         console.log("adsfads", rooms);
-        console.log(rooms[0]);
+        console.log(rooms);
 
         const newRoom = {
             room_Num: num.id,
@@ -229,7 +229,7 @@ io.on('connection', (socket) => {
         //     }
         // }
         console.log(rooms);
-        rooms[roomNum].usernickname.length=0;
+        // rooms[roomNum].usernickname.length=0;
         console.log(rooms);
         for (let i = 0; i < clientsInRoom.length; i++) {
             if(socket.id ==clientsInRoom[i])
