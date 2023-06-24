@@ -32,7 +32,7 @@
         font-family: 'HSYuji-Regular';
         -webkit-font-smoothing: antialiased;
         background-color: #fffbae;
-        background-image: url(http://127.0.0.1:4000/img/backgroundIMG.png);
+        background-image: url(/img/backgroundIMG.png);
     background-size: cover;
     position: relative;
     }
@@ -301,7 +301,7 @@
             width: 1400px;
             height: 1300px;
             /* border: 3px solid; */
-            background-image: url(http://127.0.0.1:4000/img/sketchbook_3.png);
+            background-image: url(/img/sketchbook_3.png);
         }
         #posts_wrapper {
             overflow-x: hidden;
@@ -348,7 +348,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     margin: 12px;
-    background-image: url(http://127.0.0.1:4000/img/postDiv.png);
+    background-image: url(/img/postDiv.png);
     }
 
     .post_container div:first-child{
@@ -555,7 +555,7 @@
             <!-- <figure  class="main_logo" style="background-image: url(http://127.0.0.1:5502/Monami/backEnd/image/monami.png);"> -->
                 <!-- style 속성에서 url 은 꼭, 'http://127.0.0.1:5502/Monami/backEnd/image/monami.png' 이렇게 full name 으로 써야 함 -->
             <!-- </figure > -->
-            <a href="/main"><img class="main_logo" src="http://127.0.0.1:4000/img/main_Logo.png" alt="로고">
+            <a href="/main"><img class="main_logo" src="/img/main_Logo.png" alt="로고">
                 <!-- 로고 교체 필요함 ✅ -->
 
 
@@ -580,17 +580,17 @@
                             [following 누르면, 드롭다운 예정]
                         </li> -->
                         <li> 
-                            <a href="http://127.0.0.1:4000/board/list/view"  id="newest_dropOption" data-track-view="createdAt"> 등록 순 </a>  
+                            <a href="/board/list/view"  id="newest_dropOption" data-track-view="createdAt"> 등록 순 </a>  
                             <!-- data-track-view 이 속성 안에 있는 값이 👉 뽑혀서 DB 로 넘어가게 됨 ⭐⭐⭐ -->
                         </li>
                         
                         <li> 
-                            <a href="http://127.0.0.1:4000/board/list/likes"  id="likes_dropOption" data-track-view="likes"> 좋아요 순 </a>
+                            <a href="/board/list/likes"  id="likes_dropOption" data-track-view="likes"> 좋아요 순 </a>
                         </li>
                         
                         
                         <li> 
-                            <a href="http://127.0.0.1:4000/board/list/views"  id="views_dropOption" data-track-view="views"> 조회수 순 </a>
+                            <a href="/board/list/views"  id="views_dropOption" data-track-view="views"> 조회수 순 </a>
                         </li>
                         
                         
@@ -922,12 +922,12 @@
                     
                     if (tags === "default") {
                         // 경로만 다르게!
-                        ({data} = await axios.get(`http://127.0.0.1:4000/board/list/page?num=${page_num}&order=${order_option}&tags=${tags}` , {
+                        ({data} = await axios.get(`/board/list/page?num=${page_num}&order=${order_option}&tags=${tags}` , {
                             withCredentials : true,
                         }))
                     } else {
                         // 경로만 다르게!
-                        ({data} = await axios.get(`http://127.0.0.1:4000/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${tags}` , {
+                        ({data} = await axios.get(`/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${tags}` , {
                             withCredentials : true,
                         }))
                     }
@@ -960,7 +960,7 @@
                     // // c) user 테이블에서 필요한 데이터 
                     //     // 유저 프로필 이미지 
                     //         // profile_img 속성에서 가져오면 됨
-                            console.log("프로필이미지" , data.data[0].User.profile_img)       // http://127.0.0.1:4000/monami.png
+                            console.log("프로필이미지" , data.data[0].User.profile_img)       // /monami.png
 
                     //     // 유저 경험치 
                             console.log("유저경험치" , data.data[0].User.exp)        // 0
@@ -1023,8 +1023,8 @@
                             const post_image_container = document.createElement('div');
                             const post_image = document.createElement('figure');
                             post_image.classList.add('post_image');
-                            // post_image.style.backgroundImage = `url(http://127.0.0.1:4000/img/TV.png)`;    
-                            post_image.style.backgroundImage = `url(http://127.0.0.1:4000/img/${element.post_img})`;    
+                            // post_image.style.backgroundImage = `url(/img/TV.png)`;    
+                            post_image.style.backgroundImage = `url(/img/${element.post_img})`;    
                             post_image_container.appendChild(post_image)
 
                         // post_container 에 합치기
@@ -1114,7 +1114,7 @@
                             const link_container = document.createElement('a');
                             // Post id 를 a 태그 주소에 넣어주기
                             const id_post = element.id
-                            link_container.href = `http://127.0.0.1:4000/board/item/${id_post}`
+                            link_container.href = `/board/item/${id_post}`
 
                             link_container.classList.add('link_container_BTN')
                             link_container.id = `link_container_${element.id}`
@@ -1137,7 +1137,7 @@
                     tags_keywordBtn.classList.add('category_nav_itemBtn')
                     tags_keywordBtn.textContent = `${element.tags}`
 
-                    // a.style.href = 'http://127.0.0.1:4000/board/list/tags'
+                    // a.style.href = '/board/list/tags'
                         // 동일한 페이지에서? 
                         // 다른 페이지에서? 
                         // 이걸 하면 -> 해당 태그들이 검색되고 -> 그것에 담긴 내용들이 담긴다. @ DB 에서 
@@ -1196,7 +1196,7 @@ try {
             console.log("✍✍✍✍✍✍✍✍✍✍ 매개변수가 잘 들어오고 있나 :" , tags )
             // 여기서 함수 자체를 잠깐 멈추고 싶은데 어케? 
             
-            const {data} = await axios.get(`http://127.0.0.1:4000/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${tags}` , {
+            const {data} = await axios.get(`/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${tags}` , {
                 withCredentials : true,
             })
             console.log("@boardList > getView() 들어오는거 확인 🙆‍♂️ " , data)
@@ -1227,7 +1227,7 @@ try {
             // // c) user 테이블에서 필요한 데이터 
             //     // 유저 프로필 이미지 
             //         // profile_img 속성에서 가져오면 됨
-                    console.log("프로필이미지" , data.data[0].User.profile_img)       // http://127.0.0.1:4000/monami.png
+                    console.log("프로필이미지" , data.data[0].User.profile_img)       // /monami.png
 
             //     // 유저 경험치 
                     console.log("유저경험치" , data.data[0].User.exp)        // 0
@@ -1274,7 +1274,7 @@ try {
                     const post_image_container = document.createElement('div');
                     const post_image = document.createElement('figure');
                     post_image.classList.add('post_image');
-                    post_image.style.backgroundImage = `url(http://127.0.0.1:5502/Monami/backEnd/image/${element.post_img})`;    
+                    post_image.style.backgroundImage = `url(/image/${element.post_img})`;    
                     post_image_container.appendChild(post_image)
 
                 // post_container 에 합치기
@@ -1364,7 +1364,7 @@ try {
                     const link_container = document.createElement('a');
                     // Post id 를 a 태그 주소에 넣어주기
                     const id_post = element.id
-                    link_container.href = `http://127.0.0.1:4000/board/item/${id_post}`
+                    link_container.href = `/board/item/${id_post}`
 
                     link_container.classList.add('link_container_BTN')
                     link_container.id = `link_container_${element.id}`
@@ -1387,7 +1387,7 @@ try {
             tags_keywordBtn.classList.add('category_nav_itemBtn')
             tags_keywordBtn.textContent = `${element.tags}`
 
-            // a.style.href = 'http://127.0.0.1:4000/board/list/tags'
+            // a.style.href = '/board/list/tags'
                 // 동일한 페이지에서? 
                 // 다른 페이지에서? 
                 // 이걸 하면 -> 해당 태그들이 검색되고 -> 그것에 담긴 내용들이 담긴다. @ DB 에서 
@@ -1483,7 +1483,7 @@ try {
     
                         // [2차시도] | 페이지 자체를 변경하기 
                             // axios.get? 
-                            const {data} = await axios.get(`http://127.0.0.1:4000/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${clickedTag}` , {
+                            const {data} = await axios.get(`/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${clickedTag}` , {
                             withCredentials : true
 
                         })
@@ -1520,7 +1520,7 @@ try {
             console.log( "검색된 키워드 확인 🤟🤟🤟🤟🤟" , searchedKeyword)    
 
             // 페이지 자체를 변경하기 
-                const {data} = await axios.get(`http://127.0.0.1:4000/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${searchedKeyword}` , {
+                const {data} = await axios.get(`/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${searchedKeyword}` , {
                 withCredentials : true
                 })
                 console.log("유저가 검색한 태그에 해당하는 data | '배열통' 👉 " , data.data)    // 이게 getView 에 들어가는 형식
@@ -1575,7 +1575,7 @@ try {
                         await IncreaseLikeNum(clickedPostID)
                         
                         
-                        // window.location.href = 'http://127.0.0.1:4000/board/list/view'
+                        // window.location.href = '/board/list/view'
                         // 그리고 다시 그려주세요 
                             // 필요한 이유 : 이걸 안 하면, 새로고침 해야, 좋아요가 올라감 
                             
@@ -1634,7 +1634,7 @@ try {
 
 
             // 서버로 보내기
-            const result = await axios.post("http://127.0.0.1:4000/board/likes" , data , {
+            const result = await axios.post("/board/likes" , data , {
                 withCredentials : true,
                 "Content-Type" : "json/application"     // form 에 담길 데이터 타입 설정
             })
@@ -1675,7 +1675,7 @@ try {
 
 // 🔹 Share Work 클릭하면, 글쓰기 페이지로 이동   
     shareWorkBtn.onclick = () => {
-            window.location.href = "http://127.0.0.1:4000/board/create"
+            window.location.href = "/board/create"
     }
 
 
@@ -1795,7 +1795,7 @@ try {
     //                 // await getView(undefined , undefined, _order_option)
                     
     //             // 파일 자체 이동 시키기 
-    //                 window.location.href = "http://127.0.0.1:4000/board/list/likes"
+    //                 window.location.href = "/board/list/likes"
                     
     //                 alert(_order_option) // likes 찍힘
                 
@@ -1816,7 +1816,7 @@ try {
                     
 
     //                 // 파일 자체 이동 시키기 
-    //                 window.location.href = "http://127.0.0.1:4000/board/list/views"
+    //                 window.location.href = "/board/list/views"
 
                     
     //                 // alert(_order_option) // likes 찍힘

@@ -36,7 +36,7 @@ body {
     font-family: 'HSYuji-Regular';
     -webkit-font-smoothing: antialiased;
     background-color: #fffbae;
-    background-image: url(http://127.0.0.1:4000/img/backgroundIMG.png);
+    background-image: url(/img/backgroundIMG.png);
     background-size: cover;
     width: 100%;
     height: 150%;
@@ -119,7 +119,7 @@ body {
     font-size: 24px;
     width: 200px;
     height: 100px;
-    background-image: url(http://127.0.0.1:4000/img/backBtn.png);
+    background-image: url(/img/backBtn.png);
     }
 
 
@@ -154,7 +154,7 @@ body {
         left: 50%;
         top: 130px;
         transform: translate(-50%);
-        background-image: url(http://127.0.0.1:4000/img/postviewDiv.png);
+        background-image: url(/img/postviewDiv.png);
     }
 
 
@@ -710,10 +710,10 @@ font-size: 30px;
     <!-- 1. header -->
 
         <header class="header">
-            <a href="/main"><img class="headerLogo" src="http://127.0.0.1:4000/img/main_Logo.png" alt="로고">
+            <a href="/main"><img class="headerLogo" src="/img/main_Logo.png" alt="로고">
             </a>
             <div class="boardItem_closeBtn_wrap">
-                <a href="http://127.0.0.1:4000/board/list/view" class="boardItem_closeBtn"> <div>게시판목록</div> </a>
+                <a href="/board/list/view" class="boardItem_closeBtn"> <div>게시판목록</div> </a>
             </div>
             
         </header>
@@ -1095,7 +1095,7 @@ font-size: 30px;
             // 1) axios 로 get 요청보내서, data 받아오기
                 
                 // 아, 그러면, 여기서, comment_id 담아서 요청해버리면 되겠네 ❓❓❓
-                    const {data} = await axios.get(`http://127.0.0.1:4000/board/item` , {
+                    const {data} = await axios.get(`/board/item` , {
                         withCredentials : true,
                         params : {
                             id : postId,
@@ -1111,7 +1111,7 @@ font-size: 30px;
                                 // ✅ 이걸 가져올 때, decode 에서, user id 를 가져올 수 있다는 가정. 
                             // POST 요청의 body
                                 // 클라가 보낼 때 
-                                    // const {data} = await axios.post("http://127.0.0.1:4000/board/item", { id: postId }, {
+                                    // const {data} = await axios.post("/board/item", { id: postId }, {
                                     //     withCredentials: true
                                     // });
                                 // 서버가 받을 때 
@@ -1442,7 +1442,7 @@ font-size: 30px;
                                 tempImgFile = postsData.post_img;
                                 console.log("🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀" , tempImgFile)
                                 const main_figure = document.getElementById("posts_img")
-                                main_figure.style.backgroundImage = `url(http://127.0.0.1:5502/Monami/backEnd/image/${tempImgFile})`
+                                main_figure.style.backgroundImage = `url(/image/${tempImgFile})`
                                 // http://127.0.0.1:5502/Monami/backEnd/image/${tempImgFile}
 
                             // top 프로필 이미지 가져오기 
@@ -1506,14 +1506,14 @@ font-size: 30px;
                     let edit_post_content = input_post_content.value
 
                     try {
-                        const response = await axios.post(`http://127.0.0.1:4000/board/item/edit/${postId}` , {
+                        const response = await axios.post(`/board/item/edit/${postId}` , {
                             title : edit_post_title,
                             desc : edit_post_content, 
                             postId : postId
                         })
 
                     // 여기에서 돌아오면, 이제 다른 페이지 보여주면 되잖아. ✅✅✅ 
-                        window.location.href = `http://127.0.0.1:4000/board/item/${postId}`
+                        window.location.href = `/board/item/${postId}`
                         
 
                     } catch (error) {
@@ -1538,22 +1538,22 @@ font-size: 30px;
             if (postsData.user_id === loginUser_UserID) {    
             } else {
             alert("🙅‍♀️본인글만 삭제 할 수 있어요🙅‍♂️")
-            window.location.href = `http://127.0.0.1:4000/board/item/${postId}`
+            window.location.href = `/board/item/${postId}`
             }
             // [해석] 다만, 수정 페이지로 넘어오는 데에서, 본인확인을 한번 해서, 오캐이 
 
         
         // 작성자 본인이면, 삭제 요청 보낼 수 있게 하기 
             try {
-                const response = await axios.post(`http://127.0.0.1:4000/board/item/delete/${postId}` , {
+                const response = await axios.post(`/board/item/delete/${postId}` , {
                     // title : edit_post_title,
                     // desc : edit_post_content, 
                     postId : postId
                 })
 
             // 여기에서 돌아오면, 이제 다른 페이지 보여주면 되잖아. 
-                // window.location.href = `http://127.0.0.1:4000/board/item/${postId}`
-                window.location.href = `http://127.0.0.1:4000/board/list/view`
+                // window.location.href = `/board/item/${postId}`
+                window.location.href = `/board/list/view`
                 
             } catch (error) {
                 console.log(error)
@@ -1573,14 +1573,14 @@ font-size: 30px;
 //             // 현재 이 글을 클릭한 사람의 아이디 : _loginUser_UserID
 
 //         if (postsData.user_id === loginUser_UserID) {
-//             window.location.href = `http://127.0.0.1:4000/board/item/delete/${postId}`
+//             window.location.href = `/board/item/delete/${postId}`
 //         } else {
 //             alert("🙅‍♀️본인글만 삭제 할 수 있어요🙅‍♂️")
 //         }
 
 //             // 참고 코드
 //                 // const id_post = element.id
-//                 // link_container.href = `http://127.0.0.1:4000/board/item/${id_post}`
+//                 // link_container.href = `/board/item/${id_post}`
 //     }
 
 
@@ -1643,7 +1643,7 @@ font-size: 30px;
                 console.log("👲👲👲👲👲👲 댓글 잘 보이나" , comment_write.value)
             
             // 2) axios 전송
-            const result = await axios.post("http://127.0.0.1:4000/board/comment/create" , data , {
+            const result = await axios.post("/board/comment/create" , data , {
                     withCredentials : true ,      // withCredentials 필수 ⭐⭐
                     headers : {"Content-Type" : "application/json"}
                 });
@@ -1745,7 +1745,7 @@ font-size: 30px;
 
 
             // 3) axios 로 서버에 전송 
-                const result = await axios.post("http://127.0.0.1:4000/board/comment/create" , data, {
+                const result = await axios.post("/board/comment/create" , data, {
                     withCredentials : true, 
                     headers : {"Content-Type" : "application/json"}
                 } , {
@@ -1778,7 +1778,7 @@ font-size: 30px;
                     // [접근] 댓글이 저장된 곳은? comment 테이블 -> so, COMMENT 테이블에 GET 요청 하기
 
                     console.log("💨 @reCommentView 접근")
-                    const {arrReComment} = await axios.get("http://127.0.0.1:4000/board/comment" , {
+                    const {arrReComment} = await axios.get("/board/comment" , {
                         withCredentials : true, 
                         params : {
                             id_of_targetComment : reComment_originalCommentID
@@ -1852,7 +1852,7 @@ font-size: 30px;
             }
                 console.log("data 잘 들어갔나" , data);
 
-            await axios.post("http://127.0.0.1:4000/board/likes" , data, {
+            await axios.post("/board/likes" , data, {
                 withCredentials : true, 
             } , {
                 headers : {"Content-Type" : "application/json"}
@@ -1876,12 +1876,12 @@ font-size: 30px;
 //     post_editBtn.onclick = () => {
         
 //         // 수정완료 버튼
-//         window.location.href = `http://127.0.0.1:4000/board/item/edit/${postId}`
+//         window.location.href = `/board/item/edit/${postId}`
 //         // window.location.reload();
 
 //         // 참고 코드
 //             // const id_post = element.id
-//             // link_container.href = `http://127.0.0.1:4000/board/item/${id_post}`
+//             // link_container.href = `/board/item/${id_post}`
 //     }
 
 
@@ -1891,7 +1891,7 @@ font-size: 30px;
 
 //         console.log("삭제 버튼 클릭 완료! 체크!")
 //         // 게시글 삭제 완료 버튼
-//         window.location.href = `http://127.0.0.1:4000/board/item/${postId}`
+//         window.location.href = `/board/item/${postId}`
 
 
 //     }

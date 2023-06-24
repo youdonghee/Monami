@@ -64,7 +64,7 @@
             width: 100px;
             height: 100px;
             /* border: 1px solid slateblue; */
-            background-image: url(http://127.0.0.1:4000/img/timeDiv.png);
+            background-image: url(/img/timeDiv.png);
             align-items: center;
             display: flex;
             justify-content: center;
@@ -107,7 +107,7 @@
         }
 
         .question2.pop {
-            background-image: url(http://127.0.0.1:4000/img/row2box.png);
+            background-image: url(/img/row2box.png);
         }
 
         .question2 #DrawVideo {
@@ -162,7 +162,7 @@
             top: 50%;
             transform: translate(-50%, -50%);
             color: white;
-            background-image: url(http://127.0.0.1:4000/img/questionBottom.png);
+            background-image: url(/img/questionBottom.png);
         }
 
         .drawings .rows2 {
@@ -197,12 +197,12 @@
         }
 
         .colors .colors2 {
-            background-image: url(http://127.0.0.1:4000/img/colorBox.png);
+            background-image: url(/img/colorBox.png);
             left: 60%;
         }
 
         .brushs .brushs2 {
-            background-image: url(http://127.0.0.1:4000/img/brushBox.png);
+            background-image: url(/img/brushBox.png);
             left: 40%;
         }
 
@@ -224,11 +224,11 @@
         }
 
         .brushbox #eraser {
-            background-image: url(http://127.0.0.1:4000/img/eraser.png);
+            background-image: url(/img/eraser.png);
         }
 
         .brushbox #erasers {
-            background-image: url(http://127.0.0.1:4000/img/erasers.png);
+            background-image: url(/img/erasers.png);
         }
 
         .colorbox .brushColor {
@@ -296,7 +296,7 @@
             /* background-color: yellowgreen; */
             width: 500px;
             height: 80px;
-            background-image: url(http://127.0.0.1:4000/img/main_Logo.png);
+            background-image: url(/img/main_Logo.png);
             background-size: cover;
             background-repeat: no-repeat;
             cursor: pointer;
@@ -328,7 +328,7 @@
             bottom: -35px;
             width: 200px;
             height: 350px;
-            background-image: url(http://127.0.0.1:4000/img/resultPlayer.png);
+            background-image: url(/img/resultPlayer.png);
         }
 
         .playerName {
@@ -356,7 +356,7 @@
         .row2 .gameBoard {
             width: 700px;
             height: 430px;
-            background-image: url(http://127.0.0.1:4000/img/TV.png);
+            background-image: url(/img/TV.png);
         }
 
         #nickname {
@@ -399,7 +399,7 @@
             position: absolute;
             left: 50%;
             transform: translate(-50%);
-            background-image: url(http://127.0.0.1:4000/img/boardGR.png);
+            background-image: url(/img/boardGR.png);
         }
 
         .inboard {
@@ -420,7 +420,7 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            background-image: url(http://127.0.0.1:4000/img/canvasDiv.png);
+            background-image: url(/img/canvasDiv.png);
         }
 
         .backImg {
@@ -453,44 +453,44 @@
         .kyo {
             top: 10px;
             left: 20px;
-            background-image: url(http://127.0.0.1:4000/img/kyo.png);
+            background-image: url(/img/kyo.png);
         }
 
         .leejung {
             bottom: 65px;
             right: -23px;
-            background-image: url(http://127.0.0.1:4000/img/leejung.png);
+            background-image: url(/img/leejung.png);
         }
 
         .talju {
             bottom: 98px;
             left: -32px;
-            background-image: url(http://127.0.0.1:4000/img/talju.png);
+            background-image: url(/img/talju.png);
         }
 
         .eraserImg {
             bottom: -59px;
             right: 80px;
-            background-image: url(http://127.0.0.1:4000/img/eraserImg.png);
+            background-image: url(/img/eraserImg.png);
         }
 
         .Ybun {
             bottom: -77px;
             right: 228px;
-            background-image: url(http://127.0.0.1:4000/img/Ybun.png);
+            background-image: url(/img/Ybun.png);
         }
 
         .Pbun {
             bottom: -77px;
             right: 329px;
-            background-image: url(http://127.0.0.1:4000/img/Pbun.png);
+            background-image: url(/img/Pbun.png);
         }
 
         .Bbun {
             bottom: -83px;
             left: 200px;
 
-            background-image: url(http://127.0.0.1:4000/img/Bbun.png);
+            background-image: url(/img/Bbun.png);
         }
     </style>
 </head>
@@ -519,7 +519,7 @@
                 <div class="row2">
                     <!-- question1: 첫 제시어 입력 시 나타나는 로딩화면 -->
                     <div class="question1 pop">
-                        <img style="width: 300px; height: 300px;" src="http://127.0.0.1:4000/img/sample.gif" alt="로딩">
+                        <img style="width: 300px; height: 300px;" src="/img/sample.gif" alt="로딩">
                     </div>
                     <!-- question2: 제시어 입력 시 나타나는 그림(영상) -->
                     <div class="question2">
@@ -677,7 +677,7 @@
     //     console.log(tmp.rooms[tmp.roomNum].usernickname);
     // })
 
-    // const data = await axios.get('http://127.0.0.1:4000/gameplay/getUserinfo', {
+    // const data = await axios.get('/gameplay/getUserinfo', {
     //     withCredentials: true
     // }).then((e) => {
     //     console.log("응애");
@@ -844,7 +844,7 @@
             formData.append('file', videoBlob);
 
             // setTimeout(() => {
-            //     const response = axios.post('http://127.0.0.1:4000/gameplay', formData, {
+            //     const response = axios.post('/gameplay', formData, {
             //     withCredentials: true,
             //     "Content-Type": "multipart/form-data"
             // });
@@ -864,12 +864,12 @@
             console.log(viewIndex);
             // console.log("createVideoURL data", response.data);
 
-            // await axios.post('http://127.0.0.1:4000/gameplay/DrawQueUpdate', { painter: drawing.user_primaryKey, lastDrawing: lastDrawing, viewIndex: viewIndex }, {
+            // await axios.post('/gameplay/DrawQueUpdate', { painter: drawing.user_primaryKey, lastDrawing: lastDrawing, viewIndex: viewIndex }, {
             //     withCredentials: true
             // } );
 
             // setTimeout(() => {
-            //     axios.post('http://127.0.0.1:4000/gameplay/DrawQueUpdate', { painter: drawing.user_primaryKey, lastDrawing: lastDrawing, viewIndex: viewIndex }, {
+            //     axios.post('/gameplay/DrawQueUpdate', { painter: drawing.user_primaryKey, lastDrawing: lastDrawing, viewIndex: viewIndex }, {
             //     withCredentials: true
             // });    
             // }, 4000);
@@ -897,7 +897,7 @@
     //         formData.append('file', videoBlob);
 
 
-    //         const response = await axios.post('http://127.0.0.1:4000/gameplay', formData, {
+    //         const response = await axios.post('/gameplay', formData, {
     //             withCredentials: true,
     //             "Content-Type": "multipart/form-data"
     //         })
@@ -913,7 +913,7 @@
 
 
 
-    //                 axios.post('http://127.0.0.1:4000/gameplay/DrawQueUpdate', { painter: drawing.user_primaryKey, lastDrawing: lastDrawing, viewIndex: viewIndex }, {
+    //                 axios.post('/gameplay/DrawQueUpdate', { painter: drawing.user_primaryKey, lastDrawing: lastDrawing, viewIndex: viewIndex }, {
     //                     withCredentials: true
     //                 })
     //     } catch (error) {
@@ -958,7 +958,7 @@
 
         }
 
-        // axios.post('http://127.0.0.1:4000/gameplay/viewVideo', { Drawid: index }, {
+        // axios.post('/gameplay/viewVideo', { Drawid: index }, {
         //     responseType: 'arraybuffer', // 서버에서 배열 버퍼 형식으로 데이터를 가져옵니다.
         //     withCredentials: true
         // }).then((e) => {
@@ -1000,7 +1000,7 @@
 
         }
 
-        // axios.post('http://127.0.0.1:4000/gameplay/viewVideo', { Drawid: index }, {
+        // axios.post('/gameplay/viewVideo', { Drawid: index }, {
         //     responseType: 'arraybuffer', // 서버에서 배열 버퍼 형식으로 데이터를 가져옵니다.
         //     withCredentials: true
         // }).then((e) => {
@@ -1683,7 +1683,7 @@
 
    async function gething2() {
         try {
-            await axios.post('http://127.0.0.1:4000/gameplay/getUserinfo', { id: gmaeplayer }, {
+            await axios.post('/gameplay/getUserinfo', { id: gmaeplayer }, {
                 responseType: 'json',
                 withCredentials: true
             }).then((e) => {
@@ -1693,7 +1693,7 @@
                 socket.emit('rein', e.data[e.data.length - 1].id);
                 const exit = document.getElementById('restart');
                 exit.addEventListener('click', async () => {
-                      await axios.post('http://127.0.0.1:4000/gameplay/RoomDelete', { id: e.data[e.data.length - 1].id },
+                      await axios.post('/gameplay/RoomDelete', { id: e.data[e.data.length - 1].id },
             {
                 withCredentials: true
             })})

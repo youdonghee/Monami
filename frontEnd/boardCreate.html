@@ -25,7 +25,7 @@
         font-family: 'HSYuji-Regular';
         -webkit-font-smoothing: antialiased;
         background-color: #fffbae;
-        background-image: url(http://127.0.0.1:4000/img/backgroundIMG.png);
+        background-image: url(/img/backgroundIMG.png);
         background-size: cover;
         width: 100%;
         height: 150%;
@@ -79,7 +79,7 @@
         left: 50%;
         top: 130px;
         transform: translate(-50%);
-        background-image: url(http://127.0.0.1:4000/img/postviewDiv.png);
+        background-image: url(/img/postviewDiv.png);
     }
 
 
@@ -124,7 +124,7 @@
     font-size: 24px;
     width: 200px;
     height: 100px;
-    background-image: url(http://127.0.0.1:4000/img/backBtn.png);
+    background-image: url(/img/backBtn.png);
     }
 
 
@@ -609,7 +609,7 @@ position: absolute;
 left: 50%;
 top: 130px;
 transform: translate(-50%);
-background-image: url(http://127.0.0.1:4000/img/postviewDiv.png);
+background-image: url(/img/postviewDiv.png);
 }
 
 
@@ -880,10 +880,10 @@ background-image: url(http://127.0.0.1:4000/img/postviewDiv.png);
 
         <!-- 1. header -->
         <header class="header">
-            <a href="/main"><img class="headerLogo" src="http://127.0.0.1:4000/img/main_Logo.png" alt="로고">
+            <a href="/main"><img class="headerLogo" src="/img/main_Logo.png" alt="로고">
             </a>
             <div class="boardItem_closeBtn_wrap">
-                <a href="http://127.0.0.1:4000/board/list/view" class="boardItem_closeBtn"> <div>게시판목록</div> </a>
+                <a href="/board/list/view" class="boardItem_closeBtn"> <div>게시판목록</div> </a>
             </div>
         </header>
 
@@ -1069,7 +1069,7 @@ background-image: url(http://127.0.0.1:4000/img/postviewDiv.png);
     
     
             // axios 전송 | await 붙여야❓❓ 
-            const e = await axios.post("http://127.0.0.1:4000/board/create" , form, { 
+            const e = await axios.post("/board/create" , form, { 
                 
                 // type 설정 : 설정에 따라, 서버가 기대하는 값이 달라짐
                 "Content-Type" : "multipart/form-data",
@@ -1105,7 +1105,7 @@ background-image: url(http://127.0.0.1:4000/img/postviewDiv.png);
 // 🔹 취소버튼 누르면 -> 게시글 목록으로 이동하기 
     // closeBtn.onclick = () => {
     //     try {
-    //         window.location.href = 'http://127.0.0.1:4000/board/list/view'
+    //         window.location.href = '/board/list/view'
     //     } catch (error) {
     //         console.log(error)
     //     }

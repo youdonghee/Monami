@@ -27,7 +27,7 @@
         font-family: 'HSYuji-Regular';
         -webkit-font-smoothing: antialiased;
         background-color: #fffbae;
-        background-image: url(http://127.0.0.1:4000/img/backgroundIMG.png);
+        background-image: url(/img/backgroundIMG.png);
         background-size: cover;
         width: 100%;
         height: 150%;
@@ -84,7 +84,7 @@
         left: 50%;
         top: 130px;
         transform: translate(-50%);
-        background-image: url(http://127.0.0.1:4000/img/postviewDiv.png);
+        background-image: url(/img/postviewDiv.png);
     }
 
     /* ------------- 👇 header 👇 ---------------- */
@@ -128,7 +128,7 @@
     font-size: 24px;
     width: 200px;
     height: 100px;
-    background-image: url(http://127.0.0.1:4000/img/backBtn.png);
+    background-image: url(/img/backBtn.png);
     }
 
 
@@ -608,10 +608,10 @@
         <!-- [할 것] 검은색 테두리 처리 하면 될 것 같음 -->
 
         <header class="header">
-            <a href="/main"><img class="headerLogo" src="http://127.0.0.1:4000/img/main_Logo.png" alt="로고">
+            <a href="/main"><img class="headerLogo" src="/img/main_Logo.png" alt="로고">
             </a>
             <div class="boardItem_closeBtn_wrap">
-                <a href="http://127.0.0.1:4000/board/list/view" class="boardItem_closeBtn"> <div>게시판목록</div> </a>
+                <a href="/board/list/view" class="boardItem_closeBtn"> <div>게시판목록</div> </a>
             </div>
 
         </header>
@@ -757,7 +757,7 @@
     <!-- <a href="http://127.0.0.1:5500/Monami/frontEnd/boardList.html"> <button>글 목록</button> </a> <br><br> -->
 
     <!-- 새롭게 시도 | 필요한 이유 : 1) 모든 요청이 '서버' 로 들어가게 해야 2) 데이터를 업데이트 받아서 그려줄 수 있음  -->
-    <!-- <a href="http://127.0.0.1:4000/board/list/view"> <button>글 목록</button> </a> <br><br> -->
+    <!-- <a href="/board/list/view"> <button>글 목록</button> </a> <br><br> -->
     <!-- [해석] 
                 1) 지금, url 네이밍이 좀 이상하긴 함. | 나중에 다시 정리해봐야 겠음 😥😥😥  
 
@@ -895,7 +895,7 @@
             // 1) axios 로 get 요청보내서, data 받아오기
                 
                 // 아, 그러면, 여기서, comment_id 담아서 요청해버리면 되겠네 ❓❓❓
-                    const {data} = await axios.get(`http://127.0.0.1:4000/board/item` , {
+                    const {data} = await axios.get(`/board/item` , {
                         withCredentials : true,
                         params : {
                             id : postId,
@@ -911,7 +911,7 @@
                                 // ✅ 이걸 가져올 때, decode 에서, user id 를 가져올 수 있다는 가정. 
                             // POST 요청의 body
                                 // 클라가 보낼 때 
-                                    // const {data} = await axios.post("http://127.0.0.1:4000/board/item", { id: postId }, {
+                                    // const {data} = await axios.post("/board/item", { id: postId }, {
                                     //     withCredentials: true
                                     // });
                                 // 서버가 받을 때 
@@ -1276,7 +1276,7 @@
                                 tempImgFile = postsData.post_img;
                                 console.log("🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀" , tempImgFile)
                                 const main_figure = document.getElementById("posts_img")
-                                main_figure.style.backgroundImage = `url(http://127.0.0.1:4000/img/${tempImgFile})`
+                                main_figure.style.backgroundImage = `url(/img/${tempImgFile})`
                                 // http://127.0.0.1:5502/Monami/backEnd/image/${tempImgFile}
 
                             // top 프로필 이미지 가져오기 
@@ -1616,7 +1616,7 @@
                 console.log("👲👲👲👲👲👲 댓글 잘 보이나" , comment_write.value)
             
             // 2) axios 전송
-            const result = await axios.post("http://127.0.0.1:4000/board/comment/create" , data , {
+            const result = await axios.post("/board/comment/create" , data , {
                     withCredentials : true ,      // withCredentials 필수 ⭐⭐
                     headers : {"Content-Type" : "application/json"}
                 });
@@ -1748,7 +1748,7 @@
 
 
             // 3) axios 로 서버에 전송 
-                const result = await axios.post("http://127.0.0.1:4000/board/comment/create" , data, {
+                const result = await axios.post("/board/comment/create" , data, {
                     withCredentials : true, 
                     headers : {"Content-Type" : "application/json"}
                 } , {
@@ -1822,7 +1822,7 @@
                     // [접근] 댓글이 저장된 곳은? comment 테이블 -> so, COMMENT 테이블에 GET 요청 하기
 
                     console.log("💨 @reCommentView 접근")
-                    const {arrReComment} = await axios.get("http://127.0.0.1:4000/board/comment" , {
+                    const {arrReComment} = await axios.get("/board/comment" , {
                         withCredentials : true, 
                         params : {
                             id_of_targetComment : reComment_originalCommentID
@@ -1956,7 +1956,7 @@
             }
                 console.log("data 잘 들어갔나" , data);
 
-            await axios.post("http://127.0.0.1:4000/board/likes" , data, {
+            await axios.post("/board/likes" , data, {
                 withCredentials : true, 
             } , {
                 headers : {"Content-Type" : "application/json"}
@@ -1989,14 +1989,14 @@
             // 현재 이 글을 클릭한 사람의 아이디 : _loginUser_UserID
 
         if (postsData.user_id === loginUser_UserID) {
-            window.location.href = `http://127.0.0.1:4000/board/item/edit/${postId}`
+            window.location.href = `/board/item/edit/${postId}`
         } else {
             alert("🙅‍♀️본인글만 수정 할 수 있어요🙅‍♂️")
         }
 
             // 참고 코드
                 // const id_post = element.id
-                // link_container.href = `http://127.0.0.1:4000/board/item/${id_post}`
+                // link_container.href = `/board/item/${id_post}`
     }
     
     
