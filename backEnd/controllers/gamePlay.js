@@ -222,7 +222,7 @@ exports.QuestionView = async (req, res) => {
 exports.getUserinfo= async(req,res)=>{
     try {
         console.log("req임")
-        console.log(req)
+       
         const { id } = req.body;
         const {room}=req;
         console.log(id);
