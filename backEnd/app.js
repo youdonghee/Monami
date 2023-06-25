@@ -89,7 +89,7 @@ let rooms = new Array(100);
 
 
 io.on('connection', (socket) => {
-
+try {
     console.log(socket.id, ' user connected');
     userid.push({
         userid: socket.id,
@@ -279,4 +279,7 @@ io.on('connection', (socket) => {
             }, 6000);
         })
     })
+} catch (error) {
+    console.log("소켓에러 앱js",error);
+}
 });
