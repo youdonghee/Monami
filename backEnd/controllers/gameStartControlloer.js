@@ -6,7 +6,6 @@ exports.gameStart = async(req,res)=>{
     if (decode) {
       return res.json({message:"게임 스타트"});
     }else{
-      console.log("안돼");
       return res.json({message:"다시 로그인"});
     }
   } catch (error) {

@@ -142,14 +142,8 @@ exports.UserView = async (req, res) => {
 
 exports.getHost = async(req,res)=>{
     try {
-        console.log("하아하이이하이히아");
         const {title} = req.body;
-        console.log(title);
         const room = await Room.findOne({where:{title:title}});
-        // const room = await Room.findOne({
-        //     order: [['id', 'DESC']],
-        //   })
-          console.log(room);
         res.json(room);
     } catch (error) {
         console.log(error);
@@ -159,7 +153,6 @@ exports.getHost = async(req,res)=>{
 exports.gamestatupdatae=async(req,res)=>{
     try {
         const {id}=req.body;
-        console.log("gamestatupdatae",id);
         await Room.update({play:1},{where:{id:id}});
         res.json();
     } catch (error) {
