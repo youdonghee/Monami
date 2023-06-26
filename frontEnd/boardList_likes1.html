@@ -5,13 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
     <!-- axios 로 form 태그 대신 전송 받아오기 ⭐⭐ -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -871,7 +864,6 @@
     
 </body>
 
-
 <script>
 // 🔹 전역변수 
 
@@ -920,12 +912,12 @@
                     
                     if (tags === "default") {
                         // 경로만 다르게!
-                        ({data} = await axios.get(`/board/list/page?num=${page_num}&order=${order_option}&tags=${tags}` , {
+                        ({data} = await axios.get(`http://127.0.0.1:4000/board/list/page?num=${page_num}&order=${order_option}&tags=${tags}` , {
                             withCredentials : true,
                         }))
                     } else {
                         // 경로만 다르게!
-                        ({data} = await axios.get(`/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${tags}` , {
+                        ({data} = await axios.get(`http://127.0.0.1:4000/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${tags}` , {
                             withCredentials : true,
                         }))
                     }
@@ -958,7 +950,7 @@
                     // // c) user 테이블에서 필요한 데이터 
                     //     // 유저 프로필 이미지 
                     //         // profile_img 속성에서 가져오면 됨
-                            console.log("프로필이미지" , data.data[0].User.profile_img)       // /monami.png
+                            console.log("프로필이미지" , data.data[0].User.profile_img)       // http://127.0.0.1:4000/monami.png
 
                     //     // 유저 경험치 
                             console.log("유저경험치" , data.data[0].User.exp)        // 0
@@ -1016,13 +1008,10 @@
                     // 1️⃣ post 에 유저가 올린 사진 container | figure 태그 안에 들어가는 것들
 
                         // [시도] figure 태그로 하는 버전
-                            console.log("SD?SD?sssssssssssSD",element.post_img);
-
                             const post_image_container = document.createElement('div');
                             const post_image = document.createElement('figure');
                             post_image.classList.add('post_image');
-                            // post_image.style.backgroundImage = `url(/img/TV.png)`;    
-                            post_image.style.backgroundImage = `url(/img/${element.post_img})`;    
+                            post_image.style.backgroundImage = `url(http://127.0.0.1:5502/Monami/backEnd/image/${element.post_img})`;    
                             post_image_container.appendChild(post_image)
 
                         // post_container 에 합치기
@@ -1041,10 +1030,10 @@
                             post_desc_container.appendChild(title_container)
                             
                         // 댓글수 container
-                            // const comment_num_container = document.createElement('div');
-                            // comment_num_container.id = `comment_num_${element.id}`
-                            // comment_num_container.textContent = `댓글수 : ${element.Comments.length}`
-                            // post_desc_container.appendChild(comment_num_container)
+                            const comment_num_container = document.createElement('div');
+                            comment_num_container.id = `comment_num_${element.id}`
+                            comment_num_container.textContent = `댓글수 : ${element.Comments.length}`
+                            post_desc_container.appendChild(comment_num_container)
                             
                         // 글쓴이 container
                             const post_writer_container = document.createElement('div');
@@ -1066,16 +1055,16 @@
                             post_desc_container.appendChild(user_profileImg_container)
 
                         // 작성일자 container 
-                            // const createdAt_container = document.createElement('div');
-                            // createdAt_container.id = `createdAt_${element.id}`
-                            // createdAt_container.textContent = `작성일자 : ${element.createdAt.split('T')[0]}`
-                            // post_desc_container.appendChild(createdAt_container)
+                            const createdAt_container = document.createElement('div');
+                            createdAt_container.id = `createdAt_${element.id}`
+                            createdAt_container.textContent = `작성일자 : ${element.createdAt.split('T')[0]}`
+                            post_desc_container.appendChild(createdAt_container)
                             
                         // 유저 경험치 container 
-                            // const exp_container = document.createElement('div');
-                            // exp_container.id = `exp_${element.id}`
-                            // exp_container.textContent = `유저 경험치 EXP : ${element.User.exp}`
-                            // post_desc_container.appendChild(exp_container)
+                            const exp_container = document.createElement('div');
+                            exp_container.id = `exp_${element.id}`
+                            exp_container.textContent = `유저 경험치 EXP : ${element.User.exp}`
+                            post_desc_container.appendChild(exp_container)
                             
                         // views container 
                             const views_container = document.createElement('div');
@@ -1112,7 +1101,7 @@
                             const link_container = document.createElement('a');
                             // Post id 를 a 태그 주소에 넣어주기
                             const id_post = element.id
-                            link_container.href = `/board/item/${id_post}`
+                            link_container.href = `http://127.0.0.1:4000/board/item/${id_post}`
 
                             link_container.classList.add('link_container_BTN')
                             link_container.id = `link_container_${element.id}`
@@ -1135,7 +1124,7 @@
                     tags_keywordBtn.classList.add('category_nav_itemBtn')
                     tags_keywordBtn.textContent = `${element.tags}`
 
-                    // a.style.href = '/board/list/tags'
+                    // a.style.href = 'http://127.0.0.1:4000/board/list/tags'
                         // 동일한 페이지에서? 
                         // 다른 페이지에서? 
                         // 이걸 하면 -> 해당 태그들이 검색되고 -> 그것에 담긴 내용들이 담긴다. @ DB 에서 
@@ -1143,29 +1132,12 @@
                         // 음... 
                         // 우선, 그러면, 페이지네이션? 음. 그러면, 이 url 에 대해서 query 를 붙여야 하나? 
 
-                    
-                    // 특정 태그만 보여주는 방법
-                        // 과거 시도
-                            // // tags_item 이것 중에서 0~5 번째만 선택 👉 tags_item_container appendchild 
-                            // if( index < 6) {
-                            //     tags_item.appendChild(tags_keywordBtn)
-                            // }
-                            // console.log( "태그들🌻🌻🌻" , tags_item)
-
-                        // 2차 시도
-                        // for (const i = tags_item.length -1; i>=4; i--) {
-                        //     tags_item.removeChild(tags_item[i])
-                        // }
-                        
-
-                        // 3차 시도 
-                            // if( index >= 6) {
-                            //     element.style.display = 'none'
-                            // }
-                            // console.log( "태그들🌻🌻🌻" , tags_item)
 
                     tags_item.appendChild(tags_keywordBtn)
                     tags_item_container.appendChild(tags_item)
+
+
+
                 });
 
                 
@@ -1194,7 +1166,7 @@ try {
             console.log("✍✍✍✍✍✍✍✍✍✍ 매개변수가 잘 들어오고 있나 :" , tags )
             // 여기서 함수 자체를 잠깐 멈추고 싶은데 어케? 
             
-            const {data} = await axios.get(`/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${tags}` , {
+            const {data} = await axios.get(`http://127.0.0.1:4000/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${tags}` , {
                 withCredentials : true,
             })
             console.log("@boardList > getView() 들어오는거 확인 🙆‍♂️ " , data)
@@ -1225,7 +1197,7 @@ try {
             // // c) user 테이블에서 필요한 데이터 
             //     // 유저 프로필 이미지 
             //         // profile_img 속성에서 가져오면 됨
-                    console.log("프로필이미지" , data.data[0].User.profile_img)       // /monami.png
+                    console.log("프로필이미지" , data.data[0].User.profile_img)       // http://127.0.0.1:4000/monami.png
 
             //     // 유저 경험치 
                     console.log("유저경험치" , data.data[0].User.exp)        // 0
@@ -1272,7 +1244,7 @@ try {
                     const post_image_container = document.createElement('div');
                     const post_image = document.createElement('figure');
                     post_image.classList.add('post_image');
-                    post_image.style.backgroundImage = `url(/image/${element.post_img})`;    
+                    post_image.style.backgroundImage = `url(http://127.0.0.1:5502/Monami/backEnd/image/${element.post_img})`;    
                     post_image_container.appendChild(post_image)
 
                 // post_container 에 합치기
@@ -1316,10 +1288,10 @@ try {
                     post_desc_container.appendChild(user_profileImg_container)
 
                 // 작성일자 container 
-                    // const createdAt_container = document.createElement('div');
-                    // createdAt_container.id = `createdAt_${element.id}`
-                    // createdAt_container.textContent = `작성일자 : ${element.createdAt.split('T')[0]}`
-                    // post_desc_container.appendChild(createdAt_container)
+                    const createdAt_container = document.createElement('div');
+                    createdAt_container.id = `createdAt_${element.id}`
+                    createdAt_container.textContent = `작성일자 : ${element.createdAt.split('T')[0]}`
+                    post_desc_container.appendChild(createdAt_container)
                     
                 // 유저 경험치 container 
                     const exp_container = document.createElement('div');
@@ -1362,7 +1334,7 @@ try {
                     const link_container = document.createElement('a');
                     // Post id 를 a 태그 주소에 넣어주기
                     const id_post = element.id
-                    link_container.href = `/board/item/${id_post}`
+                    link_container.href = `http://127.0.0.1:4000/board/item/${id_post}`
 
                     link_container.classList.add('link_container_BTN')
                     link_container.id = `link_container_${element.id}`
@@ -1385,7 +1357,7 @@ try {
             tags_keywordBtn.classList.add('category_nav_itemBtn')
             tags_keywordBtn.textContent = `${element.tags}`
 
-            // a.style.href = '/board/list/tags'
+            // a.style.href = 'http://127.0.0.1:4000/board/list/tags'
                 // 동일한 페이지에서? 
                 // 다른 페이지에서? 
                 // 이걸 하면 -> 해당 태그들이 검색되고 -> 그것에 담긴 내용들이 담긴다. @ DB 에서 
@@ -1419,9 +1391,7 @@ try {
     let pageNavigation = (page_num) => {
 
         // 페이지네이션 초기화 ⭐⭐⭐
-        // const page_navigation = document.querySelector(".page_navigation_container")
-        const page_navigation = document.querySelector('#page_navigation')
-
+        const page_navigation = document.querySelector(".page_navigation_container")
         while(page_navigation.firstChild) {
             page_navigation.removeChild(page_navigation.firstChild)
         }
@@ -1439,11 +1409,6 @@ try {
         return new Promise ( async (resolve, reject) => {
             try {
                 console.log("initializedView @boardList.html")
-
-                // const posts_wrapper = document.querySelector("#posts_wrapper")
-                // const page_navigation = document.querySelector('.page_navigation_container')
-
-                // const page_navigation = document.querySelector('#page_navigation')
 
                 // post 내용들 전부 비우기
                     posts_wrapper.innerHTML = "";
@@ -1481,7 +1446,7 @@ try {
     
                         // [2차시도] | 페이지 자체를 변경하기 
                             // axios.get? 
-                            const {data} = await axios.get(`/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${clickedTag}` , {
+                            const {data} = await axios.get(`http://127.0.0.1:4000/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${clickedTag}` , {
                             withCredentials : true
 
                         })
@@ -1518,7 +1483,7 @@ try {
             console.log( "검색된 키워드 확인 🤟🤟🤟🤟🤟" , searchedKeyword)    
 
             // 페이지 자체를 변경하기 
-                const {data} = await axios.get(`/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${searchedKeyword}` , {
+                const {data} = await axios.get(`http://127.0.0.1:4000/board/list/page/tags?num=${page_num}&order=${order_option}&tags=${searchedKeyword}` , {
                 withCredentials : true
                 })
                 console.log("유저가 검색한 태그에 해당하는 data | '배열통' 👉 " , data.data)    // 이게 getView 에 들어가는 형식
@@ -1573,7 +1538,7 @@ try {
                         await IncreaseLikeNum(clickedPostID)
                         
                         
-                        // window.location.href = '/board/list/view'
+                        // window.location.href = 'http://127.0.0.1:4000/board/list/view'
                         // 그리고 다시 그려주세요 
                             // 필요한 이유 : 이걸 안 하면, 새로고침 해야, 좋아요가 올라감 
                             
@@ -1632,7 +1597,7 @@ try {
 
 
             // 서버로 보내기
-            const result = await axios.post("/board/likes" , data , {
+            const result = await axios.post("http://127.0.0.1:4000/board/likes" , data , {
                 withCredentials : true,
                 "Content-Type" : "json/application"     // form 에 담길 데이터 타입 설정
             })
@@ -1661,8 +1626,6 @@ try {
                 btn.onclick = async (event) => {
                     const clickedPage = event.target.id.split('_')[2];
                     initializedView(arrPostWithCommentUser, clickedPage, _order_option)
-                    getView(arrPostWithCommentUser, clickedPage, _order_option)
-                    
                 }
             })
 
@@ -1673,7 +1636,7 @@ try {
 
 // 🔹 Share Work 클릭하면, 글쓰기 페이지로 이동   
     shareWorkBtn.onclick = () => {
-            window.location.href = "/board/create"
+            window.location.href = "http://127.0.0.1:4000/board/create"
     }
 
 
@@ -1793,7 +1756,7 @@ try {
     //                 // await getView(undefined , undefined, _order_option)
                     
     //             // 파일 자체 이동 시키기 
-    //                 window.location.href = "/board/list/likes"
+    //                 window.location.href = "http://127.0.0.1:4000/board/list/likes"
                     
     //                 alert(_order_option) // likes 찍힘
                 
@@ -1814,7 +1777,7 @@ try {
                     
 
     //                 // 파일 자체 이동 시키기 
-    //                 window.location.href = "/board/list/views"
+    //                 window.location.href = "http://127.0.0.1:4000/board/list/views"
 
                     
     //                 // alert(_order_option) // likes 찍힘
