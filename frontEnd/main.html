@@ -25,9 +25,9 @@
       margin: 0;
       padding: 0;
       width: 100%;
-    height: 150%;
-    background-image: url(/img/backgroundIMG.png);
-    background-size: cover;
+      height: 150%;
+      background-image: url(/img/backgroundIMG.png);
+      background-size: cover;
     }
 
     .profileImg {
@@ -53,9 +53,11 @@
       /* background-color: #0e4734; */
       background-image: url(/img/gamestart.png);
     }
-    .gamebtn_in{
+
+    .gamebtn_in {
       margin-top: 5px;
     }
+
     .beforeLogin,
     .loginSuccess {
       position: absolute;
@@ -81,7 +83,7 @@
     input[type="text"],
     input[type="password"] {
       font-family: 'HSYuji-Regular';
-      background-color: #b7f8d051 ;
+      background-color: #b7f8d051;
       margin: 10px 0;
       padding: 10px;
       width: 80%;
@@ -90,11 +92,12 @@
       font-size: 17px;
       caret-color: white;
     }
+
     input:focus {
-    outline-color: white;
+      outline-color: white;
     }
 
-    label{
+    label {
       font-size: 20px;
       color: #000;
     }
@@ -110,8 +113,8 @@
       font-family: 'HSYuji-Regular';
     }
 
-      /* font-weight: 300; */
-    button:hover{
+    /* font-weight: 300; */
+    button:hover {
       border-radius: 5px;
       cursor: pointer;
       background-color: white;
@@ -141,7 +144,7 @@
     /* .gameMain {
       /* border: solid 3px tomato; */
 
-    /* } */ 
+    /* } */
 
     .header {
       width: 100%;
@@ -219,7 +222,7 @@
       align-items: center;
     }
 
-    .swiperStyle .swiper-slide img { 
+    .swiperStyle .swiper-slide img {
       display: block;
       width: 100%;
       height: 100%;
@@ -246,7 +249,7 @@
       width: 600px;
       height: 350px;
       position: relative;
-      background-image: url(/img/먕냥_색.png);
+      background-image: url(/img/swiperDiv.png);
     }
 
     .boardDiv {
@@ -311,36 +314,42 @@
       left: 50%;
       transform: translate(-50%);
     }
-    .userR{
+
+    .userR {
       margin-top: 10%;
     }
 
-    .beforeLoginBox{
+    .beforeLoginBox {
       margin-top: 65%;
     }
 
-    .rankImg{
+    .rankImg {
       width: 50px;
       height: 50px;
       border-radius: 50%;
     }
-    .rankName, .rankExp{
+
+    .rankName,
+    .rankExp {
       font-size: 17px;
       /* color: #000; */
     }
-    .rankFirst, .rankOther{
+
+    .rankFirst,
+    .rankOther {
       width: 210px;
       height: auto;
     }
 
-    .boardBtn{
+    .boardBtn {
       width: 300px;
       height: 40px;
       position: relative;
-      left: 50%;  
+      left: 50%;
       transform: translate(-50%);
     }
-    .boardBtn button{
+
+    .boardBtn button {
       width: 96px;
       height: 29px;
       border: none;
@@ -352,11 +361,11 @@
     }
 
 
-      /* font-weight: 300; */
-      .boardBtn button:hover{
+    /* font-weight: 300; */
+    .boardBtn button:hover {
       width: 96px;
       height: 29px;
-      border: 3px solid  #efaefa;
+      border: 3px solid #efaefa;
       border-radius: 5px;
       cursor: pointer;
       background-color: white;
@@ -391,21 +400,21 @@
 
               <div class="beforeLogin" id="beforeLogin">
                 <div class="beforeLoginBox">
-                  
-                <div class="input_box">
-                  <span id="idAlert"></span>
-                  <label for="">아이디</label>
-                  <input type="text" id="user_id"> <br>
-                  <span id="pwAlert"></span>
-                  <label for="">비밀번호</label>
-                  <input type="password" id="user_pw"> <br>
-                </div>
-                <div class="button_box">
-                  <button class="loginBtn" id="loginBtn">로그인</button>
-                  <button class="loginBtn" id="joinBtn" onclick="location.href='/join'">회원가입</button>
-                </div>
 
-              </div>
+                  <div class="input_box">
+                    <span id="idAlert"></span>
+                    <label for="">아이디</label>
+                    <input type="text" id="user_id"> <br>
+                    <span id="pwAlert"></span>
+                    <label for="">비밀번호</label>
+                    <input type="password" id="user_pw"> <br>
+                  </div>
+                  <div class="button_box">
+                    <button class="loginBtn" id="loginBtn">로그인</button>
+                    <button class="loginBtn" id="joinBtn" onclick="location.href='/join'">회원가입</button>
+                  </div>
+
+                </div>
 
               </div>
 
@@ -441,10 +450,10 @@
                 <div class="swiperStyle">
                   <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide">Slide 1</div>
-                      <div class="swiper-slide">Slide 2</div>
-                      <div class="swiper-slide">Slide 3</div>
-                      <div class="swiper-slide">Slide 4</div>
+                      <div style="background-image: url('img/먕냥_색.png');" class="swiper-slide">Slide 1</div>
+                      <div style="background-image: url('img/basic_1686560253488.png');" class="swiper-slide">Slide 2
+                      </div>
+                      <div class="swiper-slide" style="background-image: url(" img/orange.png");">Slide 3</div>
                     </div>
                     <div class="swiper-pagination"></div>
                   </div>
@@ -458,13 +467,13 @@
                 <div class="boardContent">
                   <div class="boardBtn">
                     <button>
-                      <a style="text-decoration: none;" href="/board/create">게시판 글쓰기</a>
+                      <a href="/board/create">게시판 글쓰기</a>
                     </button>
-                    
-                    
-                    
+
+
+
                     <button>
-                      <a style="text-decoration: none;" href="/board/list/view">게시판 목록</a>
+                      <a href="/board/list/view">게시판 목록</a>
                     </button>
                   </div>
 
@@ -660,6 +669,7 @@
 
 
   getloginaccess();
+
 </script>
 
 </html>
