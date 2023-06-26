@@ -332,6 +332,10 @@
       width: 210px;
       height: auto;
     }
+
+    .boardBtn{
+      border: 1px solid;
+    }
   </style>
 </head>
 
@@ -425,16 +429,19 @@
                 <div class="boardTitle">
                   <h1>게시판</h1>
                 </div>
-                <div class="boardContent">
-                  <button>
-                    <a href="/board/create">게시판 글쓰기</a>
-                  </button>
-                  
-                  
-                  
-                  <button>
-                    <a href="/board/list/view">게시판 목록</a>
-                  </button>
+                <div class="boardContent">\
+                  <div class="boardBtn">
+                    <button>
+                      <a style="text-decoration: none;" href="/board/create">게시판 글쓰기</a>
+                    </button>
+                    
+                    
+                    
+                    <button>
+                      <a style="text-decoration: none;" href="/board/list/view">게시판 목록</a>
+                    </button>
+                  </div>
+
                   <span id="board_rank"></span>
                 </div>
               </div>
