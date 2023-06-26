@@ -2220,7 +2220,7 @@
     const StepTwo = async () => {
 
 
-        let time = 10;
+        let time = 15;
         await axios.get('/gameplay/QuestionView', {
             responseType: 'json',
             withCredentials: true
@@ -2340,7 +2340,7 @@
             playVideo(isDraw);
         })
 
-        let time = 10;
+        let time = 20;
         let QuestionTimer = setInterval(() => {
             document.querySelector('.time').innerHTML = time + "초";
             time--;
@@ -2505,7 +2505,7 @@
 
 
         // 최종 정답을 입력해준다.
-        let time = 10;
+        let time = 20;
         let QuestionTimer = setInterval(() => {
             document.querySelector('.time').innerHTML = time + "초";
             time--;
