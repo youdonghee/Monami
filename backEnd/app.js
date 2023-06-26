@@ -231,12 +231,19 @@ try {
         console.log(rooms);
         // rooms[roomNum].usernickname.length=0;
         console.log(rooms);
-        for (let i = 0; i < clientsInRoom.length; i++) {
-            if(socket.id ==clientsInRoom[i])
-            {
-                rooms[roomNum].user.push(socket.id);
+        try {
+            for (let i = 0; i < clientsInRoom.length; i++) {
+                if(socket.id ==clientsInRoom[i])
+                {
+                    rooms[roomNum].user.push(socket.id);
+                }
             }
+            
+        } catch (error) {
+            console.log(error);
+            
         }
+       
         for (let i = 0; i < clientsInRoom.length; i++) {
             for (let n = 0; n < userid.length; n++) {
             if(userid[i].userid==rooms[roomNum].user[n])
