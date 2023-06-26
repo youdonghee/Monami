@@ -127,6 +127,7 @@
 
     a {
       text-decoration: none;
+      color: #4e4e4e;
     }
 
     a:hover {
@@ -535,7 +536,7 @@
     titleNames.forEach((e, index) => {
       board_rank.innerHTML += `
         <div>
-            <a href="/post/${e.id}">
+            <a href="/board/item/${e.id}">
                 <span> title : ${e.title}</span>
                 <span> user_id :${e.user_id}</span>
             </a>
