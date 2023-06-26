@@ -19,11 +19,11 @@ exports.joinUser = async(req,res)=>{
     }
     
     // 정규식
-    // const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/;
-    // if (!passwordRegex.test(user_pw)) {
-    //   console.log("비밀번호 정규식 아님");
-    //   return res.json({message:"비밀번호 정규식 아님"})
-    // }
+    const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/;
+    if (!passwordRegex.test(user_pw)) {
+      console.log("비밀번호 정규식 아님");
+      return res.json({message:"비밀번호 정규식 아님"})
+    }
 
     const hash = bcrypt.hashSync(user_pw, 10);
 
