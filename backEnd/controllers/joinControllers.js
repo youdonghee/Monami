@@ -46,7 +46,7 @@ exports.joinUser = async(req,res)=>{
       username,
       user_id,
       user_pw : hash,
-      profile_img : "/img/monami.png",
+      profile_img : "/img/monamiPro.png",
       exp : 0,
       joinAllow : 0,
     })
