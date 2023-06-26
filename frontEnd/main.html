@@ -334,7 +334,27 @@
     }
 
     .boardBtn{
-      border: 1px solid;
+      width: 300px;
+      height: 40px;
+      position: relative;
+      left: 50%;  
+      transform: translate(-50%);
+    }
+    .boardBtn button{
+      border-radius: 5px;
+      background-color: #efaefa;
+      color: white;
+      font-weight: 600;
+      font-family: 'HSYuji-Regular';
+    }
+
+
+      /* font-weight: 300; */
+      .boardBtn button:hover{
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: white;
+      color: #efaefa;
     }
   </style>
 </head>
@@ -429,7 +449,7 @@
                 <div class="boardTitle">
                   <h1>게시판</h1>
                 </div>
-                <div class="boardContent">\
+                <div class="boardContent">
                   <div class="boardBtn">
                     <button>
                       <a style="text-decoration: none;" href="/board/create">게시판 글쓰기</a>
