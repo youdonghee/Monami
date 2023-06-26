@@ -528,9 +528,7 @@
 <body>
     <!-- 게임 대기방의 전체 영역을 가지고 있다. -->
     <div class="view1">
-        <div id="test1">
-            <h1 class="te">3</h1>
-        </div>
+        <img id="test1"src="img/cinema-321.gif" alt="">
         <div id="test2">
             <h1 class="te">2</h1>
         </div>
@@ -731,15 +729,17 @@
     socket.on('hostgamestart', () => {
         console.log("여기오긴하냐.")
         setTimeout(() => {
+            const popReady = document.querySelector('.roompopup_ready');
+                        popReady.classList.toggle('pop');
+                        popReady.classList.toggle('test')
             test1.style.display = "block";
         }, 1000);
         setTimeout(() => {
-            test1.style.display = "none";
+   
             test2.style.display = "block";
         }, 2000);
         setTimeout(() => {
-            test2.style.display = "none";
-            test3.style.display = "block";
+     
         }, 3000);
         setTimeout(() => {
            // window.location.href = "http://127.0.0.1:5501/frontEnd/game.html";
@@ -747,28 +747,30 @@
 
            // window.location.href = "http://127.0.0.1:5500/Monami/frontEnd/maingame.html";
             // window.location.href = "http://127.0.0.1:5500/Monami/frontEnd/game.html";
+            test1.style.display = "none";
             window.location.href="/gameplay";
         }, 4000);
 
     })
     socket.on('gamestart1', () => {
+        const popReady = document.querySelector('.roompopup_ready');
+                        popReady.classList.toggle('pop');
+                        popReady.classList.toggle('test')
         console.log("안녕")
         test1.style.display = "block";
     })
     socket.on('gamestart2', () => {
         console.log("안녕")
-        test1.style.display = "none";
-        test2.style.display = "block";
+  
 
     })
     socket.on('gamestart3', () => {
         console.log("안녕")
-        test2.style.display = "none";
-        test3.style.display = "block";
+
         setTimeout(() => {
 
             //window.location.href = "http://127.0.0.1:5500/Monami/frontEnd/game.html";
-
+            test1.style.display = "none";
             window.location.href = "/gameplay";
 
         }, 1000);
