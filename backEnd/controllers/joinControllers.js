@@ -51,7 +51,7 @@ exports.joinUser = async(req,res)=>{
       joinAllow : 0,
     })
 
-    res.send("완료")
+    return res.json({message:"완료"});
 
   } catch (error) {
     console.log("회원가입 컨트롤러 오류",error);
